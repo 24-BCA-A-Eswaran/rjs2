@@ -1,10 +1,39 @@
-// Write a function that returns a message using template literals.
 
-function getMessage(name, age) {
-    // Write your code here
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greeting Program</title>
+</head>
+<body>
+  <h1>Greeting Program</h1>
 
-// Don't change the code below
-console.log(getMessage(process.argv[2], process.argv[3]));
+  <label for="name">Enter your name:</label>
+  <input type="text" id="name" placeholder="Your name">
+  <br><br>
 
-module.exports = getMessage;
+  <label for="age">Enter your age:</label>
+  <input type="number" id="age" placeholder="Your age">
+  <br><br>
+
+  <button onclick="showMessage()">Submit</button>
+
+  <h3 id="result"></h3>
+
+  <script>
+    function showMessage() {
+      const name = document.getElementById("name").value.trim();
+      const age = document.getElementById("age").value;
+      const result = document.getElementById("result");
+
+      if (name === "" || age === "") {
+        result.textContent = "Please enter your name and age.";
+        return;
+      }
+
+      result.textContent = `Hello ${name}! You are ${age} years old.`;
+    }
+  </script>
+</body>
+</html>
